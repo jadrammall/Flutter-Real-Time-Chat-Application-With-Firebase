@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719098947980",
+    "project_id": "liuchatapp-92613",
+    "storage_bucket": "liuchatapp-92613.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719098947980:android:6ba6e9383e3be842c30ea9",
+        "android_client_info": {
+          "package_name": "com.jadrammall.liuchatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDvcLg6CeI6d4jZPBPdqJUi5f2C-ZEXwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
