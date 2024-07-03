@@ -58,11 +58,45 @@ class _ChatPageState extends State<ChatPage> {
         backgroundColor: const Color(0xFF332e2e,),
         title: Text(
           widget.chatUser.name!,
-          style: const TextStyle(color: Colors.purple),
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         iconTheme: const IconThemeData(
           color: Colors.purple,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return Dialog(
+                    backgroundColor: Colors.transparent,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          image: DecorationImage(
+                            image: NetworkImage(otherUser!.profileImage!),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
+            icon: CircleAvatar(
+              backgroundImage: NetworkImage(otherUser!.profileImage!),
+            ),
+          ),
+        ],
       ),
       body: _buildUI(),
     );

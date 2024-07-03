@@ -21,10 +21,17 @@ class ChatTile extends StatelessWidget {
       title: Text (
           userProfile.name!,
         style: const TextStyle(
-            color: Colors.purple,
+            color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),
+      subtitle: Text(
+          userProfile.status!,
+        style: const TextStyle(
+          color: Colors.purple
+        ),
+      ),
+
     );
   }
 }

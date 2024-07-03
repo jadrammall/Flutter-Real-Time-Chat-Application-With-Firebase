@@ -1,18 +1,29 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class UserProfile {
   String? uid;
   String? name;
   String? pfpURL;
+  String? status;
+  String? email;
+  Timestamp? createdAt;
 
   UserProfile({
     required this.uid,
     required this.name,
     required this.pfpURL,
+    required this.status,
+    required this.email,
+    required this.createdAt
   });
 
   UserProfile.fromJson(Map<String, dynamic> json) {
     uid = json['uid'];
     name = json['name'];
     pfpURL = json['pfpURL'];
+    status = json['status'];
+    email = json ['email'];
+    createdAt = json['createdAt'];
   }
 
   Map<String, dynamic> toJson() {
@@ -20,6 +31,9 @@ class UserProfile {
     data['name'] = name;
     data['pfpURL'] = pfpURL;
     data['uid'] = uid;
+    data['status'] = status;
+    data['email'] = email;
+    data['createdAt'] = createdAt;
     return data;
   }
 }

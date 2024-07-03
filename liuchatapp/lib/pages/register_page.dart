@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:liuchatapp/models/user_profile.dart';
@@ -199,11 +200,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 );
                 if (pfpURL != null) {
                   await _databaseService.createUserProfile(
-                      userProfile: UserProfile(
+                    userProfile: UserProfile(
                           uid: _authService.user!.uid,
                           name: name,
                           pfpURL: pfpURL,
-
+                          status: "Active now",
+                          email: email,
+                          createdAt: Timestamp.now(),
                       ),
                   );
                   _alertService.showToast(

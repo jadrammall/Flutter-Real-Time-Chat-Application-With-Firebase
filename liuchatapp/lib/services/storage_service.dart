@@ -8,6 +8,18 @@ class StorageService{
 
   StorageService(){}
 
+  Future<void> deleteUserPfp({
+    required String uid,
+  }) async {
+    try {
+      Reference fileRef = FirebaseStorage.instance.ref('users/pfps/$uid.jpg');
+      await fileRef.delete();
+      print('File deleted successfully');
+    } catch (e) {
+      print('Failed to delete file: $e');
+    }
+  }
+
   Future<String?> uploadUserPfp({
     required File file,
     required String uid,

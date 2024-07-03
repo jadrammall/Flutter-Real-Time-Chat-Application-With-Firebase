@@ -4,6 +4,7 @@ import 'package:liuchatapp/pages/chat_page.dart';
 import 'package:liuchatapp/pages/home_page.dart';
 import 'package:liuchatapp/pages/login_page.dart';
 import 'package:liuchatapp/pages/register_page.dart';
+import 'package:liuchatapp/pages/edit_user_page.dart';
 import 'package:path/path.dart';
 
 class NavigationService{

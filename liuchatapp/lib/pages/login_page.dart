@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:liuchatapp/consts.dart';
@@ -147,6 +148,7 @@ class _LoginPageState extends State<LoginPage> {
             bool result = await _authService.login(email!, password!);
             print(result);
             if (result){
+              await FirebaseFirestore.instance.collection('users').doc(_authService.user!.uid).update({'status': 'Active now',});
               _navigationService.pushReplacementNamed("/home");
             } else {
               _alertService.showToast(text: "Failed to login, Please try again!",icon: Icons.error);

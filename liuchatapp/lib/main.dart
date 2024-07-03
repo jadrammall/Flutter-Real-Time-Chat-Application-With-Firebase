@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:get_it/get_it.dart';
 import 'package:liuchatapp/services/auth_service.dart';
 import 'package:liuchatapp/services/navigation_service.dart';

@@ -32,7 +32,7 @@ class DatabaseService {
     );
   }
 
-  Future<void> createUserProfile({required UserProfile userProfile}) async{
+  Future <void> createUserProfile({required UserProfile userProfile}) async{
     await _usersCollection?.doc(userProfile.uid).set(userProfile);
   }
 
@@ -42,7 +42,8 @@ class DatabaseService {
         .snapshots() as Stream<QuerySnapshot<UserProfile>>;
   }
 
-  Future<bool> checkChatExists(String uid1, String uid2) async {
+
+  Future <bool> checkChatExists(String uid1, String uid2) async {
     String chatID = generateChatID(uid1: uid1, uid2: uid2);
     final result = await _chatsCollection?.doc(chatID).get();
     if (result != null) {
@@ -79,5 +80,6 @@ class DatabaseService {
     return _chatsCollection?.doc(chatID).snapshots()
       as Stream<DocumentSnapshot<Chat>>;
   }
+
 
 }
