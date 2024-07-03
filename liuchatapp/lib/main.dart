@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
     _navigationService = _getIt.get<NavigationService>();
     _authService = _getIt.get<AuthService>();
   }
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

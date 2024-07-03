@@ -154,7 +154,11 @@ class _HomePageState extends State<HomePage> {
 
           final filteredUsers = users.where((user) {
             final userName = user['name'].toString().toLowerCase();
-            return userName.contains(_searchQuery);
+            final userCampus = user['campus'].toString().toLowerCase();
+            final userMajor = user['major'].toString().toLowerCase();
+            final query = _searchQuery.toLowerCase();
+
+            return userName.contains(query) || userCampus.contains(query) || userMajor.contains(query);
           }).toList();
 
           if (filteredUsers.isEmpty) {

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../models/user_profile.dart';
@@ -31,7 +33,14 @@ class ChatTile extends StatelessWidget {
           color: Colors.purple
         ),
       ),
-
+      trailing: Text(
+          '${userProfile.campus!}\n${userProfile.major!}',
+        textAlign: TextAlign.end,
+        style: const TextStyle(
+          color: Colors.grey,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
     );
   }
 }

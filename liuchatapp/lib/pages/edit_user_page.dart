@@ -275,7 +275,6 @@ class _EditUserPageState extends State<EditUserPage> {
         _navigationService.pushReplacementNamed("/home");
       }
     } catch (e) {
-      print(e);
       _alertService.showToast(
         text: "Failed to save your info,\nplease try again",
         icon: Icons.error,

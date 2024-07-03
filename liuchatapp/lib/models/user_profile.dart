@@ -7,6 +7,8 @@ class UserProfile {
   String? status;
   String? email;
   Timestamp? createdAt;
+  String? campus;
+  String? major;
 
   UserProfile({
     required this.uid,
@@ -14,7 +16,9 @@ class UserProfile {
     required this.pfpURL,
     required this.status,
     required this.email,
-    required this.createdAt
+    required this.createdAt,
+    required this.campus,
+    required this.major,
   });
 
   UserProfile.fromJson(Map<String, dynamic> json) {
@@ -24,6 +28,8 @@ class UserProfile {
     status = json['status'];
     email = json ['email'];
     createdAt = json['createdAt'];
+    campus = json['campus'];
+    major = json['major'];
   }
 
   Map<String, dynamic> toJson() {
@@ -34,6 +40,8 @@ class UserProfile {
     data['status'] = status;
     data['email'] = email;
     data['createdAt'] = createdAt;
+    data['campus'] = campus;
+    data['major'] = major;
     return data;
   }
 }
