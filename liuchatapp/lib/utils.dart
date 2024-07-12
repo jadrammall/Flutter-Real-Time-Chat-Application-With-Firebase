@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:liuchatapp/services/alert_service.dart';
 import 'package:liuchatapp/services/auth_service.dart';
 import 'package:liuchatapp/services/database_service.dart';
+import 'package:liuchatapp/services/document_service.dart';
 import 'package:liuchatapp/services/media_service.dart';
 import 'package:liuchatapp/services/navigation_service.dart';
 import 'package:liuchatapp/services/storage_service.dart';
@@ -17,7 +18,7 @@ Future<void> setupFirebase() async {
 Future<void> registerServices() async {
   final GetIt getIt = GetIt.instance;
   getIt.registerSingleton<AuthService>(
-      AuthService(),
+    AuthService(),
   );
 
   getIt.registerSingleton<NavigationService>(
@@ -40,10 +41,13 @@ Future<void> registerServices() async {
     DatabaseService(),
   );
 
+  getIt.registerSingleton<DocumentService>(
+    DocumentService(),
+  );
 }
 
-String generateChatID({required String uid1, required String uid2}){
-  List uids = [uid1,uid2];
+String generateChatID({required String uid1, required String uid2}) {
+  List uids = [uid1, uid2];
   uids.sort();
   String chatID = uids.fold("", (id, uid) => "$id$uid");
   return chatID;
