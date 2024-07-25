@@ -14,6 +14,7 @@ import '../models/chat.dart';
 import '../models/message.dart';
 import '../services/document_service.dart';
 import 'preview_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ChatPage extends StatefulWidget {
   final UserProfile chatUser;
@@ -229,13 +230,7 @@ class _ChatPageState extends State<ChatPage> {
       } else if (m.messageType == MessageType.File) {
         return ChatMessage(
           user: m.senderID == currentUser!.id ? currentUser! : otherUser!,
-          medias: [
-            ChatMedia(
-              url: m.content!,
-              fileName: m.content!.split("/").last,
-              type: MediaType.file,
-            )
-          ],
+          text: m.content!,
           createdAt: m.sentAt!.toDate(),
         );
       } else {
